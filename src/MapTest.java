@@ -4,6 +4,7 @@ import java.util.Map.Entry;
 import java.util.Scanner;
 import java.util.Set;
 public class MapTest {
+			//11111
 		public Map<String,course> courses;
 		public MapTest() {
 			this.courses=new HashMap<String, course>();
@@ -11,18 +12,18 @@ public class MapTest {
 		public void testPut() {
 			Scanner console=new Scanner(System.in);
 			for(int i=0;i<3;i++){
-				System.out.println("ÇëÊäÈë¿Î³Ì ID£º");
+				System.out.println("è¯·è¾“å…¥è¯¾ç¨‹ IDï¼š");
 				String id=console.next();
 				course cr=courses.get(id);
 				if(cr==null){
-					 System.out.println("ÇëÊäÈë¿Î³ÌÃû³Æ£º");
+					 System.out.println("è¯·è¾“å…¥è¯¾ç¨‹åç§°ï¼š");
 					 String name=console.next();
 					 course newcourse=new course(id,name);
 					 courses.put(id, newcourse);
-					 System.out.println("³É¹¦Ìí¼Ó¿Î³Ì£º" + courses.get(id).name);
+					 System.out.println("æˆåŠŸæ·»åŠ è¯¾ç¨‹ï¼š" + courses.get(id).name);
 				}
 				else {
-					System.out.println("¸Ã¿Î³Ì ID ÒÑ±»Õ¼ÓÃ");
+					System.out.println("è¯¥è¯¾ç¨‹ ID å·²è¢«å ç”¨");
 	                continue;
 				}
 			}
@@ -32,7 +33,7 @@ public class MapTest {
 			for(String crID:KeySet){
 				course cr=courses.get(crID);
 				if(cr!=null){
-					System.out.println("¿Î³Ì£º" + cr.name);
+					System.out.println("è¯¾ç¨‹ï¼š" + cr.name);
 				}
 			}
 			
@@ -40,15 +41,15 @@ public class MapTest {
 		public void testRemove() {
 			Scanner console=new Scanner(System.in);
 			while(true){
-				System.err.println("ÇëÊäÈëÒªÉ¾³ıµÄ¿Î³Ì ID£¡");
+				System.err.println("è¯·è¾“å…¥è¦åˆ é™¤çš„è¯¾ç¨‹ IDï¼");
 				String ID=console.next();
 				course cr=courses.get(ID);
 				if(cr==null){
-					System.out.println("¸Ã ID ²»´æÔÚ£¡");
+					System.out.println("è¯¥ ID ä¸å­˜åœ¨ï¼");
 					continue;
 				}
 				courses.remove(ID);
-				System.out.println("³É¹¦É¾³ı¿Î³Ì" + cr.name);
+				System.out.println("æˆåŠŸåˆ é™¤è¯¾ç¨‹" + cr.name);
 	            break;
 			}
 			
@@ -56,26 +57,26 @@ public class MapTest {
 		public void testEntrySet() {
 			Set<Entry<String,course>> entryset= courses.entrySet();
 			for(Entry<String,course> entry:entryset){
-				 System.out.println("È¡µÃ¼ü£º" + entry.getKey());
-		            System.out.println("¶ÔÓ¦µÄÖµÎª£º" + entry.getValue().name);
+				 System.out.println("å–å¾—é”®ï¼š" + entry.getKey());
+		            System.out.println("å¯¹åº”çš„å€¼ä¸ºï¼š" + entry.getValue().name);
 			}
 		}
 		public void testModify() {
-			System.out.println("ÇëÊäÈëÒªĞŞ¸ÄµÄ¿Î³Ì ID£º");
+			System.out.println("è¯·è¾“å…¥è¦ä¿®æ”¹çš„è¯¾ç¨‹ IDï¼š");
 			Scanner console  = new Scanner(System.in);
 			while(true){
 				String crID =console.next();
 				course course = courses.get(crID);
 				if(course == null){
-					 System.out.println("¸Ã ID ²»´æÔÚ£¡ÇëÖØĞÂÊäÈë£¡");
+					 System.out.println("è¯¥ ID ä¸å­˜åœ¨ï¼è¯·é‡æ–°è¾“å…¥ï¼");
 		                continue;
 				}
-				System.out.println("µ±Ç°¸Ã¿Î³Ì ID£¬Ëù¶ÔÓ¦µÄ¿Î³ÌÎª£º" + course.name);
-				System.out.println("ÇëÊäÈëĞÂµÄ¿Î³ÌÃû³Æ£º");
+				System.out.println("å½“å‰è¯¥è¯¾ç¨‹ IDï¼Œæ‰€å¯¹åº”çš„è¯¾ç¨‹ä¸ºï¼š" + course.name);
+				System.out.println("è¯·è¾“å…¥æ–°çš„è¯¾ç¨‹åç§°ï¼š");
 				String name = console.next();
 				course newCourse = new course(crID, name);
 				courses.put(crID,newCourse);
-				System.out.println("ĞŞ¸Ä³É¹¦£¡");           
+				System.out.println("ä¿®æ”¹æˆåŠŸï¼");           
 				break;
 			}
 		}
